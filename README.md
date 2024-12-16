@@ -15,70 +15,46 @@ Functionality & How to Run:
 
 Sample play: 
 
-Enter player names separated by commas:player 1, player 2, player 3
+Enter player names separated by commas: player 1, player 2, player 3
 
-player 1's score: 0
-player 1 rolled: (3, 1, 6)
-Do you want to stop and score your current roll? (yes/no): yes
+player 1's score: 0 player 1 rolled: (3, 1, 6) Do you want to stop and score your current roll? (yes/no): yes 
 player 1's score: 10
 
- player 2's score: 0
- player 2 rolled: (4, 4, 2)
-Fixed dice: Number 4 was rolled twice.
-Do you want to reroll the non-fixed dice? (yes/no) yes
- player 2 rerolled: (4, 4, 1)
-Do you want to reroll the non-fixed dice? (yes/no) yes 
- player 2 rerolled: (4, 4, 6)
-Do you want to reroll the non-fixed dice? (yes/no) no
- player 2's score: 14
+player 2's score: 0 
+player 2 rolled: (4, 4, 2) Fixed dice: Number 4 was rolled twice. Do you want to reroll the non-fixed dice? (yes/no) yes 
+player 2 rerolled: (4, 4, 1) Do you want to reroll the non-fixed dice? (yes/no) yes 
+player 2 rerolled: (4, 4, 6) Do you want to reroll the non-fixed dice? (yes/no) no 
+player 2's score: 14
 
- player 3's score: 0
- player 3 rolled: (1, 6, 2)
-Do you want to stop and score your current roll? (yes/no): no
- player 3 rolled: (6, 5, 3)
-Do you want to stop and score your current roll? (yes/no): yes
- player 3's score: 14
+player 3's score: 0 
+player 3 rolled: (1, 6, 2) Do you want to stop and score your current roll? (yes/no): no 
+player 3 rolled: (6, 5, 3) Do you want to stop and score your current roll? (yes/no): yes 
+player 3's score: 14
 
-player 1's score: 10
-player 1 rolled: (3, 4, 4)
-Fixed dice: Number 4 was rolled twice.
-Do you want to reroll the non-fixed dice? (yes/no) yes
-player 1 rerolled: (3, 4, 4)
-Do you want to reroll the non-fixed dice? (yes/no) yes
-player 1 rerolled: (4, 4, 4)
-Tupled out! Zero points for this turn.
+player 1's score: 10 
+player 1 rolled: (3, 4, 4) Fixed dice: Number 4 was rolled twice. Do you want to reroll the non-fixed dice? (yes/no) yes 
+player 1 rerolled: (3, 4, 4) Do you want to reroll the non-fixed dice? (yes/no) yes 
+player 1 rerolled: (4, 4, 4) Tupled out! Zero points for this turn. 
 player 1's score: 10
 
- player 2's score: 14
- player 2 rolled: (5, 4, 1)
-Do you want to stop and score your current roll? (yes/no): no
- player 2 rolled: (4, 4, 4)
-Tupled out! Zero points for this turn.
- player 2's score: 14
+player 2's score: 14 
+player 2 rolled: (5, 4, 1) Do you want to stop and score your current roll? (yes/no): no 
+player 2 rolled: (4, 4, 4) Tupled out! Zero points for this turn. 
+player 2's score: 14
 
- player 3's score: 14
- player 3 rolled: (1, 6, 5)
-Do you want to stop and score your current roll? (yes/no): no 
- player 3 rolled: (2, 3, 5)
-Do you want to stop and score your current roll? (yes/no): no
- player 3 rolled: (1, 1, 4)
-Fixed dice: Number 1 was rolled twice.
-Do you want to reroll the non-fixed dice? (yes/no)yes
- player 3 rerolled: (1, 1, 4)
-Do you want to reroll the non-fixed dice? (yes/no)yes
- player 3 rerolled: (1, 1, 6)
-Do you want to reroll the non-fixed dice? (yes/no)no
- player 3's score: 22
+player 3's score: 14 
+player 3 rolled: (1, 6, 5) Do you want to stop and score your current roll? (yes/no): no 
+player 3 rolled: (2, 3, 5) Do you want to stop and score your current roll? (yes/no): no 
+player 3 rolled: (1, 1, 4) Fixed dice: Number 1 was rolled twice. Do you want to reroll the non-fixed dice? (yes/no) yes 
+player 3 rerolled: (1, 1, 4) Do you want to reroll the non-fixed dice? (yes/no) yes 
+player 3 rerolled: (1, 1, 6) Do you want to reroll the non-fixed dice? (yes/no) no 
+player 3's score: 22
 
-player 1's score: 10
-player 1 rolled: (4, 3, 2)
-Do you want to stop and score your current roll? (yes/no): no
-player 1 rolled: (3, 6, 2)
-Do you want to stop and score your current roll? (yes/no): yes
+player 1's score: 10 player 1 rolled: (4, 3, 2) Do you want to stop and score your current roll? (yes/no): no 
+player 1 rolled: (3, 6, 2) Do you want to stop and score your current roll? (yes/no): yes 
 player 1's score: 21
 
- player 2's score: 14
- player 2 rolled: (5, 1, 6)
-Do you want to stop and score your current roll? (yes/no): yes
- player 2's score: 26
- player 2 wins!
+player 2's score: 14 
+player 2 rolled: (5, 1, 6) Do you want to stop and score your current roll? (yes/no): yes 
+player 2's score: 26 
+player 2 wins!
