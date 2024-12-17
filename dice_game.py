@@ -1,11 +1,14 @@
 import random
+import pandas as pd
 
 def initialize_game():
     """I wrote the code below to be the setup for the game, which will define the target score to win (25) and ask players to enter their names, which can be a fun way to personalize the game for each round if a bigger group of players wants to take turns."""
     target_score = 25
     players = input("Enter player names separated by commas:").split(',')
     scores = {player: 0 for  player in players}
-    return target_score, players, scores 
+    """Edit: Now using the pandas library, the players' names will be stored in a DataFrame so that player names will be """
+    scores_df = pd.DataFrame(list(scores.items()), columns = ['Player','Score'])
+    return target_score, scores_df
 
 def roll_dice():
     """This function will roll three dice and will return each value rolled in a list."""
@@ -69,24 +72,24 @@ def play_turn(player):
             except ValueError as valueerror:
                 print(valueerror)
 
-def play_game(target_score, players, scores):
+def play_game(target_score, scores_df):
     """This function keeps track of the players' scores and compares them to the target score set in the intialize_game function above. The return values are different based on whether the target score of 25 is reached or not. """
     current_player_index = 0
-    while all(score < target_score for score in scores.values()):
-        current_player = players[current_player_index]
-        print(f"\n{current_player}'s score: {scores[current_player]}")
-        points = play_turn(current_player)
-        scores[current_player] += points
-        print(f"{current_player}'s score: {scores[current_player]}")
-
-        if scores[current_player] >= target_score:
-            print(f"{current_player} wins!")
+    while all(scores_df['Score'] < target_score):
+        player = scores_df.at[current_player_index, 'Player']
+        print(f"\n{player}'s turn (Current score: {scores_df.at[current_player_index, 'Score']})")
+        points = play_turn(player)
+        scores_df.at[current_player_index, 'Score'] += points
+        print(f"{player}'s new score: {scores_df.at[current_player_index, 'Score']})")
+        
+        if scores_df.at[current_player_index, 'Score'] >= target_score:
+            print(f"{player} wins!")
             break
 
-        current_player_index = (current_player_index + 1) % len(players)
+        current_player_index = (current_player_index + 1) % len(scores_df)
 
 #This will be used to initialize the game, allowing the initialize_game funtion I wrote in the beginning to set the player names and initialize the scores. 
-target_score, players, scores = initialize_game()
+target_score, scores_df = initialize_game()
 
 #This will start the game by taking in the max score, two different player names, and their scores as the parameters. 
-play_game(target_score, players, scores) 
+play_game(target_score, scores_df) 
