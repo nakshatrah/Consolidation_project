@@ -1,5 +1,4 @@
 # Consolidation_project : Dice Game! 
-
 Functionality & How to Run: 
 
 1. Upon running the program, it will prompt you for player names. At this point, enter the names of the players playing the game, seperated by a commma. For this game, you can have more than 2 players! After this, it will display the message "Starting the game...". This signifies that a round has started. 
