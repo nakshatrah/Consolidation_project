@@ -1,19 +1,30 @@
-import random
-import pandas as pd
+import random 
+import pandas as pd 
 import time 
 
 def initialize_game():
     """I wrote the code below to be the setup for the game, which will define the target score to win (25) and ask players to enter their names, which can be a fun way to personalize the game for each round if a bigger group of players wants to take turns."""
     target_score = 25
     players = input("Enter player names separated by commas:").split(',')
+    players = [player.strip().replace(" ", "") for player in players]
     scores = {player: 0 for  player in players}
     """Edit: Now using the pandas library, the players' names will be stored in a DataFrame so that player names will be """
     scores_df = pd.DataFrame(list(scores.items()), columns = ['Player','Score'])
     return target_score, scores_df
+    # test: 
+    # test input: "John, Jane, Adam" 
+    # output expected: target_score = 25, scores_df w/ columns for Player and Score
+    # target_score, scores_df = initialize_game()
+    # print(f"Target Score: {target_score}")
+    # print(scores_df)
 
 def roll_dice():
     """This function will roll three dice and will return each value rolled in a list."""
     return tuple(random.randint(1, 6) for _ in range(3)) #changed to tuple to create unchangeable dice values unless player demands a reroll of what they generated
+    # test: 
+    # output expected: 1 tuple with 3 integers, between 1 and 6
+    # dice = roll_dice()
+    # print(f"Rolled dice: {dice}")
 
 def play_turn(player):
     """This function controls the scores by rolling the dice and adding up the score value. It also controls what counts as "tupling out" and printing the results to the terminal."""
@@ -63,11 +74,10 @@ def play_turn(player):
                 except Exception as err: 
                     print(f"An error occurred: {err}")
                     continue 
-
             return sum(dice)
         
         else:
-            try: 
+            try:
                 stop = input("Do you want to stop and score your current roll? (yes/no): \n").strip().lower()
                 if stop == "yes":
                     return sum(dice)
@@ -77,6 +87,12 @@ def play_turn(player):
                     raise ValueError("Invalid input. Please enter 'yes' or 'no'.\n")
             except ValueError as valueerror:
                 print(valueerror)
+
+    # test:
+    # input: "Nakshatra"
+    # output expected: can be different, depends on the roll results & user input
+    # player_score = play_turn("Nakshatra")
+    # print(f"Nakshatra's score: {player_score}")
 
 def play_game(target_score, scores_df):
     """This function keeps track of the players' scores and compares them to the target score set in the intialize_game function above. The return values are different based on whether the target score of 25 is reached or not. """
@@ -93,6 +109,14 @@ def play_game(target_score, scores_df):
             break
 
         current_player_index = (current_player_index + 1) % len(scores_df)
+    # test:
+    # input: 25 & DataFrame containing players & scores
+    # output expected: game will play until a player reaches the target score. 
+    # test_target_score = 10
+    # test_players = ["John", "Jane", "Adam"]
+    # test_scores_df = pd.DataFrame({"Player": test_players, "Score": [0, 0, 0]})
+    # play_game(test_target_score, test_scores_df)
+    # print(test_scores_df)
 
 #This will be used to initialize the game, allowing the initialize_game funtion I wrote in the beginning to set the player names and initialize the scores. 
 target_score, scores_df = initialize_game()
@@ -102,8 +126,8 @@ time.sleep(1)
 print("\nStarting the game...")
 
 #This will start the game by taking in the max score, two different player names, and their scores as the parameters. 
-play_game(target_score, scores_df) 
+play_game(target_score, scores_df)
 
 #The lines below will display the timestamp for whem the game ended in Year-Month-Day + Hour-Minute-Second format to finish off that specific round.
-timestamp = time.strftime("%Y-%m-%d  %H:%M:%S")
+timestamp = time.strftime("%Y-%m-%d %H:%M:%S")
 print(f"\nRound ended at {timestamp}.")
