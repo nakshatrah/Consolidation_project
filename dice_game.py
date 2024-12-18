@@ -8,7 +8,7 @@ def initialize_game():
     players = input("Enter player names separated by commas:").split(',')
     players = [player.strip().replace(" ", "") for player in players]
     scores = {player: 0 for  player in players}
-    """Edit: Now using the pandas library, the players' names will be stored in a DataFrame so that player names will be """
+    """Edit: Now using the pandas library, the players' names will be stored in a DataFrame so that player names will be stored in column format in a DataFrame, this will make it more efficient for the program and the data will be easier to handle."""
     scores_df = pd.DataFrame(list(scores.items()), columns = ['Player','Score'])
     return target_score, scores_df
     # test: 
